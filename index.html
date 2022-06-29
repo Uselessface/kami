@@ -46,9 +46,23 @@
         </div>
         <div class="order_form_container">
             <form action="" class="order_form">
-                <div class="type"></div>
-                <div class="room_quantity"></div>
-                <button  type="submit" class="button order_button"></button>
+                <div class="type field">
+                    <label for="type">Тип уборки</label>
+                    <select name="type_of_cleaning" id="type">
+                        <option value="Поддерживающая" selected>Поддерживающая</option>
+                        <option value="Генеральная">Генеральная</option>
+                    </select>
+                </div>
+                <div class="field room_quantity">
+                    <label for="quantity">Количество комнат</label>
+                    <select name="quantity_of_rooms" id="quantity">
+                        <option value="1" selected>1-комнатная</option>
+                        <option value="2">2-комнатная</option>
+                        <option value="3">3-комнатная</option>
+                        <option value="4">4-комнатная</option>
+                    </select>
+                </div>
+                <button type="submit" class="button order_button">Оформить заявку</button>
             </form>
         </div>
         <div class="sale_container">
@@ -57,6 +71,57 @@
             </p>
         </div>
     </div>
+</section>
+<section class="about_cleaning">
+    <div class="wrapper">
+        <div class="small_header_container">
+            <div class="small_header">Про уборки</div>
+        </div>
+        <div class="tabs_container">
+            <div class="tabs_text">Клинер приедет со всем необходимым для уборки. Стоимость уборки рассчитывается от количества комнат.</div>
+            <div class="tabs_text tabs_nav_container">
+                <span class="tabs_descriptiom">В каждый тариф входит уборка:</span>
+                <ul class="tabs_selectors">
+                    <li class="tab active_tab">В комнате</li>
+                    <li class="tab">На кухне</li>
+                    <li class="tab">В ванной и туалете</li>
+                    <li class="tab">В коридоре</li>
+                </ul>
+            </div>
+            <div class="tabs_images">
+                <div class="tab_content active_content">
+                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                </div>
+                <div class="tab_content">
+                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                </div>
+                <div class="tab_content">
+                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                </div>
+                <div class="tab_content">
+                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                </div>
+            </div>
+            <div class="cleaning_description">
+                <div class="ongoing cleaning">Поддерживающая уборка</div>
+                <div class="general cleaning">Генеральная уборка</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="small_header_container">
+            <div class="small_header">Типы уборки</div>
+        </div>
+        <div class="types_of_cleaning__info_container">
+            <div class="types_of_cleaning__info">
+                <div class="ongoing cleaning">Поддерживающая</div>
+            </div>
+            <div class="types_of_cleaning__info">
+                <div class="general cleaning">Генеральная</div>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
