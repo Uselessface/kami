@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Intro';
+    src: url('../fonts/intro/Intro.eot');
+    src: local('☺'), url('../fonts/intro/Intro.woff') format('woff'), url('../fonts/intro/Intro.ttf') format('truetype'), url('../fonts/intro/Intro.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+html{
+    font-size: 15px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 100%;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fff;
+}
+
+section{
+    max-width:1366px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapper{
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero{
+    background: url("../img/block1_bg.jpg") no-repeat top center;
+}
+    .main_menu_container{
+        padding: 40px 35px 0 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1366px;
+        width: 100%;
+    }
+        .logo_container{
+            flex: 0 0 130px;
+        }
+            .logo_img{
+                display: block;
+                width: 100%;
+            }
+        .main_menu{
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+            .nav_link{
+                color: #ffffff;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+                .nav_link:active{
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+        .phone_and_login{
+            max-width: 230px;
+            width: 100%;
+            margin-left: 200px;
+            display: flex;
+            align-items: center;
+            gap:40px;
+            justify-content: flex-end;
+        }
+            .phone_link{
+               font-size:  1.067rem;
+                white-space: nowrap;
+            }
+            .button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.933rem;
+            }
+                .login_button{
+                    padding: 11px 46px;
+                    flex: 1 1 128px;
+                    width: 100%;
+                    border:1px solid #ffffff;
+                    border-radius: 1.133rem;
+                    color: #ffffff;
+                }
+    .phone_button_container{
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+        .phone_button{
+            margin-right: 45px;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background-color: #6fe0f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .phone_button > img{
+                display: block;
+            }
+
+    .hero .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        .section_header_container{
+            color: #ffffff;
+            margin-top: 120px;
+            font-family: "Intro",sans-serif;
+            font-weight: bold;
+            line-height: 1.042;
+            text-align: center;
+        }
+            .section_header{
+                font-size: 3.067rem;
+            }
+                .section_header span {
+                    font-size: 2.4rem;
+                    display: block;
+                }
+            .section_header_container .green{
+                font-size: 2.133rem;
+                color: rgb(130, 234, 173);
+                line-height: 1.2;
+            }
+    .order_form_container{
+        height: 110px;
+        margin-top: 150px;
+        max-width: 815px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 1.333rem 2.333rem;
+        border-radius: 10px;
+        filter: drop-shadow(0 0 7.5px rgba(0,0,0,0.1));
+    }
+
+    .sale_container{
+        margin-top: 25px;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+.yellow{
+    color:#f6ff00;
+}
