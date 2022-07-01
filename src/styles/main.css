@@ -56,12 +56,76 @@ section{
         max-width: 1366px;
         width: 100%;
     }
+        .burger_btn {
+            display: none;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index:2;
+            overflow: hidden;
+            align-self: flex-start;
+        }
+
+        .burger_btn span {
+            width: 30px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            transition: all 0.5s;
+        }
+
+        .burger_btn span:nth-of-type(2) {
+            top: calc(50% - 10px);
+        }
+        .burger_btn span:nth-of-type(3) {
+            top: calc(50% + 10px);
+        }
+
+        /* Меняем гамбургер иконку, когда меню открыто */
+        .burger_btn.active_burger span:nth-of-type(1) {
+            display: none;
+        }
+        .burger_btn.active_burger span:nth-of-type(2) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(45deg);
+        }
+        .burger_btn.active_burger span:nth-of-type(3) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(-45deg);
+        }
+
+        /* Меню, которое будет появляться */
+        .burger_menu {
+            display: none;
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            width: 100%;
+            height: auto;
+            padding-left: 25px;
+            padding-top: 10px;
+            transform: translateY(-100%);
+            transition: transform 0.5s;
+            z-index: 888;
+        }
+        .burger_menu.active_burger_menu {
+            transform: translateY(90%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .burger_menu li {
+            list-style-type: none;
+            margin: 5px 0;
+        }
         .logo_container{
             flex: 0 0 130px;
         }
             .logo_img{
                 display: block;
-                width: 100%;
             }
         .main_menu{
             display: flex;
@@ -133,7 +197,7 @@ section{
     }
         .section_header_container{
             color: #ffffff;
-            margin-top: 120px;
+            margin-top: 8rem;
             font-family: "Intro",sans-serif;
             font-weight: bold;
             line-height: 1.042;
@@ -152,7 +216,7 @@ section{
                 line-height: 1.2;
             }
     .order_form_container{
-        margin-top: 150px;
+        margin-top: 10rem;
         max-width: 815px;
         width: 100%;
         padding: 1.333rem 2.333rem;
@@ -185,9 +249,9 @@ section{
                     color:#a1a1a1;
                 }
             .order_button{
-                background-image: -moz-linear-gradient( 0deg, rgb(130,234,173) 0%, rgb(111,224,242) 100%);
-                background-image: -webkit-linear-gradient( 0deg, rgb(130,234,173) 0%, rgb(111,224,242) 100%);
-                background-image: -ms-linear-gradient( 0deg, rgb(130,234,173) 0%, rgb(111,224,242) 100%);
+                background: -moz-linear-gradient( 0deg, rgb(130,234,173) 0%, rgb(111,224,242) 100%);
+                background: -webkit-linear-gradient( 0deg, rgb(130,234,173) 0%, rgb(111,224,242) 100%);
+                background: -ms-linear-gradient( 0deg, rgb(130,234,173) 0%, rgb(111,224,242) 100%);
                 box-shadow: 0.342px 0.94px 4.8px 0.2px rgba(0, 0, 0, 0.2);
                 width: 189px;
                 height: 41px;
@@ -195,7 +259,7 @@ section{
                 font-weight: 300;
                 outline: none;
                 border-radius: 20px;
-                border: 0px;
+                border: 0;
                 cursor: pointer;
             }
     .sale_container{
@@ -228,17 +292,19 @@ section{
         }
             .tabs_selectors .tab{
                 display: inline-block;
-                border-bottom: 1px dashed #000000;
-                padding-bottom: 5px;
                 margin-left: 30px;
                 cursor: pointer;
             }
-            .tabs_selectors .active_tab{
+                .tab span{
+                    border-bottom: 1px dashed #000000;
+                    padding-bottom: 5px;
+                }
+            .tabs_selectors .active_tab span{
                     color: #62d5e9;
                     border-bottom:1px transparent;
                 }
          .tabs_images{
-             margin: 40px auto 0px;
+             margin: 40px auto 0;
          }
             .tab_content {
                 max-width: 980px;
@@ -377,10 +443,16 @@ section{
             }
                 .counter{
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     width: 100%;
                     padding: 75px 60px 50px;
+                    gap: 6.667rem;
                 }
+                    .counter_values{
+                        width: 65%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
                     .counter .counter_item{
                         text-align: center;
                     }
@@ -413,6 +485,8 @@ section{
             display: flex;
             align-items: flex-start;
             justify-content: space-around;
+            flex-wrap: wrap;
+            flex: 0 0 auto;
         }
             .bullets .bullet{
                 display: flex;
@@ -460,13 +534,14 @@ section{
         .question_tabs{
             padding: 1.5rem 6.667rem;
             margin-top: 2.667rem;
+            position: relative;
         }
             .question_tab{
                 min-height: 220px;
                 display: none;
             }
             .active_question_tab{
-                display: block;
+                display: flex;
             }
                 .question_list{
                     list-style-position: inside;
@@ -484,47 +559,125 @@ section{
                             line-height: 1.2;
                             border-bottom: 1px dashed #000000;
                         }
+                            .answer{
+                                display: none;
+                            }
+                .popup{
+                    width: 100%;
+                    margin: 0px auto;
+                    display:none;
+                    position:absolute;
+                    z-index: 999;
+                    top:25%;
+                    left:25%;
+
+                }
+                    .container{
+                        border-radius: 10px;
+                        overflow: hidden;
+                        max-width: 300px;
+                        width: 100%;
+                        background-color: rgb(255, 255, 255);
+                    }
+                        .top_question{
+                            padding: 20px;
+                            background:#a1a1a1;
+                            text-align: center;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                            .top_question .close_popup{
+                                width: 10px;
+                                cursor: pointer;
+                            }
+                        .bottom_answer{
+                            padding: 20px;
+                            text-align: center;
+                        }
+
 
 .reviews{
     background: url("../img/reviews_bg.jpg")  center 160px no-repeat;
-    height: 800px;
     background-size: cover;
 }
+    .reviews .slider_container{
+        margin: 140px auto 30px;
+        padding: 40px 70px;
+    }
+        .slider_container .slide img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    .reviews_button{
+        background: #ffffff;
+        margin: 0 auto 80px;
+    }
+        .reviews .slick-arrow{
+            display: inline-block;
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            cursor: pointer;
+            z-index: 99;
+            top: 50%;
+            margin: -20px 0 0;
+            background: url("../img/arrows.png") no-repeat;
+        }
+         .reviews .slick-prev{
+            left: -30px;
+            background-position: -0 -0;
+        }
+        .reviews .slick-next{
+            right: -30px;
+            background-position: -56px -0;
+        }
 
+@media screen and (max-width: 1170px){
+    html{
+        font-size: 14px;
+    }
+    .phone_and_login{
+        margin-left: 70px;
+        gap: 20px;
+    }
+    .logo_container, .login_button{
+        flex: 1 1 auto;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 780px) {
-    .wrapper{
-        padding: 0 5px;
+@media screen and (max-width: 980px) {
+    html{
+        font-size: 13px;
+    }
+    .main_menu_container{
+        justify-content: center;
+    }
+    .main_menu{
+        display: none;
+    }
+    .phone_and_login{
+        flex-direction: column;
+        margin-left: 50px;
+    }
+    .phone_button_container{
+        margin-top: 0;
+        order: 4;
+    }
+    .phone_button{
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    .order_form_container{
+        width: 70%;
     }
     .order_form{
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        gap: 15px;
     }
     .field{
        width: 100%;
@@ -532,5 +685,94 @@ section{
     .types_of_cleaning__info_container{
         flex-direction: column;
         align-items: center;
+    }
+}
+@media screen and (max-width: 576px){
+    html{
+        font-size: 11px;
+    }
+    .main_menu_container{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+    .burger_btn{
+        display: block;
+    }
+    .logo_container, .login_button{
+        flex: 1 1 auto;
+    }
+    .wrapper{
+        padding: 0 5px;
+    }
+    .phone_and_login{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .order_form_container{
+        width: 90%;
+    }
+
+    .tabs_selectors {
+        margin: 15px auto;
+        columns: 2;
+        width: 80%;
+    }
+        .tabs_selectors .tab{
+            margin: 0 auto 15px;
+            display: block;
+        }
+    .counter{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding: 4rem 2rem;
+    }
+        .counter_values{
+            width: 100%;
+        }
+         .counter_item .counter_numbers{
+                font-size: 2.76rem;
+            }
+        .counter_item .counter_description{
+            font-size: 1rem;
+        }
+    .bullets_container .bullets {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+        .bullet_text{
+            font-size: 1.26rem;
+            max-width: 180px;
+            width: 100%;
+        }
+    .question_groups{
+        flex-direction: column;
+    }
+        .question_groups .question_group{
+            flex: 1 1 100%;
+            padding: 20px 50px;
+        }
+            .group_name{
+                font-size: 1.6rem;
+            }
+
+    .reviews{
+        background-position: center 100px ;
+    }
+    .reviews .slider_container{
+        margin: 80px auto 30px;
+        padding: 15px;
+    }
+    .reviews .slick-prev{
+        left: -10px;
+    }
+    .reviews .slick-next{
+        right: -10px;
+    }
+
+    .container{
+        max-width: 200px;
     }
 }

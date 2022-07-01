@@ -16,16 +16,31 @@
 <body>
 <section class="hero">
     <header class="main_menu_container">
+        <div class="burger_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="burger_menu">
+            <nav>
+                <li><a href="#about" class="nav_link">Про уборки</a></li>
+                <li><a href="#" class="nav_link">Оформить заказ</a></li>
+                <li><a href="#about_us" class="nav_link">О нас </a></li>
+                <li><a href="#reviews" class="nav_link">Отзывы </a></li>
+                <li><a href="#faq" class="nav_link"> F.A.Q. </a></li>
+                <li><a href="#" class="nav_link"> Акции </a></li>
+            </nav>
+        </div>
         <div class="logo_container">
             <img src="src/img/logo.png" alt="" class="logo_img">
         </div>
         <nav class="main_menu">
-            <a href="" class="nav_link"> Про уборки </a>
-            <a href="" class="nav_link"> Оформить заказ </a>
-            <a href="" class="nav_link"> О нас </a>
-            <a href="" class="nav_link"> Отзывы </a>
-            <a href="" class="nav_link"> F.A.Q. </a>
-            <a href="" class="nav_link"> Акции </a>
+            <a href="#about" class="nav_link"> Про уборки </a>
+            <a href="#" class="nav_link"> Оформить заказ </a>
+            <a href="#about_us" class="nav_link"> О нас </a>
+            <a href="#reviews" class="nav_link"> Отзывы </a>
+            <a href="#faq" class="nav_link"> F.A.Q. </a>
+            <a href="#" class="nav_link"> Акции </a>
         </nav>
         <div class="phone_and_login">
             <a href="tel:+74958453444" class="phone_link yellow">+7 (495) 845-34-44</a>
@@ -72,7 +87,7 @@
         </div>
     </div>
 </section>
-<section class="about_cleaning">
+<section class="about_cleaning" id="about_cleaning">
     <div class="wrapper">
         <div class="small_header_container">
             <div class="small_header">Про уборки</div>
@@ -84,24 +99,24 @@
             <div class="tabs_text tabs_nav_container">
                 <span class="tabs_descriptiom">В каждый тариф входит уборка:</span>
                 <ul class="tabs_selectors">
-                    <li class="tab active_tab">В комнате</li>
-                    <li class="tab">На кухне</li>
-                    <li class="tab">В ванной и туалете</li>
-                    <li class="tab">В коридоре</li>
+                    <li class="tab active_tab"><span> В комнате</span></li>
+                    <li class="tab"><span> На кухне</span></li>
+                    <li class="tab"><span> В ванной и туалете</span></li>
+                    <li class="tab"><span> В коридоре</span></li>
                 </ul>
             </div>
             <div class="tabs_images">
                 <div class="tab_content active_content">
-                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                    <img src="src/img/bedroom.jpg" alt="" class="tab_content__image">
                 </div>
                 <div class="tab_content">
-                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                    <img src="src/img/kitchen.jpg" alt="" class="tab_content__image">
                 </div>
                 <div class="tab_content">
-                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                    <img src="src/img/bath.jpg" alt="" class="tab_content__image">
                 </div>
                 <div class="tab_content">
-                    <img src="src/img/static.png" alt="" class="tab_content__image">
+                    <img src="src/img/corridor.png" alt="" class="tab_content__image">
                 </div>
             </div>
             <div class="cleaning_description">
@@ -205,23 +220,25 @@
                     <div class="counter_name">Счетчик OZOZZON</div>
                     <div class="counter_date">23 июня 2017</div>
                 </div>
-                <div class="counter_item">
-                    <div class="counter_numbers">16882</div>
-                    <div class="counter_description">Квартир убрано</div>
-                </div>
-                <div class="counter_item">
-                    <div class="counter_numbers">17</div>
-                    <div class="counter_description">Сегодня в работе</div>
-                </div>
-                <div class="counter_item">
-                    <div class="counter_numbers">2</div>
-                    <div class="counter_description">Свободные клинеры</div>
+                <div class="counter_values">
+                    <div class="counter_item">
+                        <div class="counter_numbers">16882</div>
+                        <div class="counter_description">Квартир убрано</div>
+                    </div>
+                    <div class="counter_item">
+                        <div class="counter_numbers">17</div>
+                        <div class="counter_description">Сегодня в работе</div>
+                    </div>
+                    <div class="counter_item">
+                        <div class="counter_numbers">2</div>
+                        <div class="counter_description">Свободные клинеры</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="bullet_section">
+<section class="bullet_section" id="about_us">
     <div class="wrapper">
         <div class="small_header_container">
             <div class="small_header">Вы обязательно останетесь довольны, ведь мы...</div>
@@ -267,7 +284,7 @@
         </div>
     </div>
 </section>
-<section class="FAQ">
+<section class="FAQ" id="faq">
     <div class="wrapper">
         <div class="small_header_container">
             <div class="small_header">Часто задаваемые вопросы</div>
@@ -297,39 +314,57 @@
                 <div class="question_tab"></div>
                 <div class="question_tab active_question_tab">
                     <ol class="question_list">
-                        <li class="question"><span>Что входит в Ваши уборки?</span></li>
-                        <li class="question"><span>Обязательно ли мое присутствие?</span></li>
-                        <li class="question"><span>Чем вы убираетесь?</span></li>
-                        <li class="question"><span>Что нужно предоставить клинеру для уборки?</span></li>
-                        <li class="question"><span>Клинеру нужны чистые тряпочки?</span></li>
-                        <li class="question"><span>Могу ли я дать клинеру чаевые? Должен ли я предупреждать вас об этом?</span></li>
-                        <li class="question"><span>У меня большая квартира. Как её считать?</span></li>
-                        <li class="question"><span>Делаете ли вы уборку в выходные?</span></li>
-                        <li class="question"><span>Выезжаете ли вы в область за МКАД?</span></li>
-                        <li class="question"><span>Что такое подписка и в чем ее преимущество?</span></li>
-                        <li class="question"><span>Чем вы не занимаетесь?</span></li>
+                        <li class="question"><span class="q">Что входит в Ваши уборки?</span></li>
+                        <li class="question"><span class="q">Обязательно ли мое присутствие?</span><div class="answer">Вовсе нет. Вы можете оставить клинеру ключи, и даже указать, откуда их забрать и куда вернуть.</div></li>
+                        <li class="question"><span class="q">Чем вы убираетесь?</span></li>
+                        <li class="question"><span class="q">Что нужно предоставить клинеру для уборки?</span></li>
+                        <li class="question"><span class="q">Клинеру нужны чистые тряпочки?</span></li>
+                        <li class="question"><span class="q">Могу ли я дать клинеру чаевые? Должен ли я предупреждать вас об этом?</span></li>
+                        <li class="question"><span class="q">У меня большая квартира. Как её считать?</span></li>
+                        <li class="question"><span class="q">Делаете ли вы уборку в выходные?</span></li>
+                        <li class="question"><span class="q">Выезжаете ли вы в область за МКАД?</span></li>
+                        <li class="question"><span class="q">Что такое подписка и в чем ее преимущество?</span></li>
+                        <li class="question"><span class="q">Чем вы не занимаетесь?</span></li>
                     </ol>
                 </div>
                 <div class="question_tab"></div>
+                <div class="popup">
+                    <div class="container">
+                        <div class="top_question">
+                            <div class="close_popup">&#9650;</div>
+                            <div class="popup_name"></div>
+                        </div>
+                        <div class="bottom_answer">
+                            <div class="popup_answer"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
-<section class="reviews">
+</section video>
+<section class="reviews" id="reviews">
     <div class="wrapper">
         <div class="small_header_container">
             <div class="small_header">Отзывы</div>
         </div>
-        <div class="slider_container">
+        <div class="slider_container box-shadow_container">
             <div class="slide">
-                <img src="" alt="" class="slide_image">
+                <img src="src/img/slide_image.jpg" alt="" class="slide_image">
+            </div>
+            <div class="slide">
+                <img src="src/img/slide_image.jpg" alt="" class="slide_image">
+            </div>
+            <div class="slide">
+                <img src="src/img/slide_image.jpg" alt="" class="slide_image">
             </div>
         </div>
-        <div class="button reviews_button">все отзывы</div>
+        <div class="button order_button reviews_button ">все отзывы</div>
     </div>
 </section>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="src/js/slick/slick.min.js"></script>
+<script type="text/javascript" src="src/js/main.js"></script>
 </body>
 </html>
